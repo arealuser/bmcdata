@@ -130,6 +130,7 @@ The dataset encompasses a diverse set of workloads designed to stress-test syste
 **TEAP**
 
 Our ongoing research, not yet published, enables software-hardware collaborative resource provisioning.
+The genetic algorithm, along with a greedy algorithm for comparison, is located in `scripts/algorithms.py`.
 
 **FAN Mode**
 
@@ -251,8 +252,9 @@ For clarity, here's a synopsis of included datasets, detailing fan control strat
 | 202310252230.csv| PWM 30/255 | TEAP+IO  | Kernel & 16 VMs |
 | 202405241724.csv| PWM 30/255 | performance  | Jenkins & 16 VMs |
 | 202405241940.csv| PID 35 | performance  | Jenkins & 16 VMs |
-| 202405241724.csv| PWM 30/255| powersave  | Jenkins & 16 VMs |
-| 202405241724.csv| PWM 30/255| ondemand  | Jenkins & 16 VMs |
-| 202405241724.csv| PWM 30/255| TEAP  | Jenkins & 16 VMs |
+| 202405242053.csv| PWM 30/255| powersave  | Jenkins & 16 VMs |
+| 202405242207.csv| PWM 30/255| ondemand  | Jenkins & 16 VMs |
+| 202405242318.csv| PWM 30/255| TEAP  | Jenkins & 16 VMs |
+| 202406132127.csv| PID 35 | performance  | Jenkins & 16 VMs |
 
 
