@@ -1,0 +1,255 @@
+##############################################################################
+#   INVALID RUN -- INVALID RUN -- INVALID RUN -- INVALID RUN -- INVALID RUN  #
+#                                                                            #
+# 'reportable' flag not set during run                                       #
+# 471.omnetpp (base) did not have enough runs!                               #
+# 456.hmmer (base) did not have enough runs!                                 #
+# 445.gobmk (base) did not have enough runs!                                 #
+# 458.sjeng (base) did not have enough runs!                                 #
+# 429.mcf (base) did not have enough runs!                                   #
+# 473.astar (base) did not have enough runs!                                 #
+# 483.xalancbmk (base) did not have enough runs!                             #
+# 400.perlbench (base) did not have enough runs!                             #
+# 464.h264ref (base) did not have enough runs!                               #
+# 462.libquantum (base) did not have enough runs!                            #
+# 401.bzip2 (base) did not have enough runs!                                 #
+# 403.gcc (base) did not have enough runs!                                   #
+# Unknown flags were used! See                                               #
+#      http://www.spec.org/cpu2006/Docs/runspec.html#flagsurl                #
+# for information about how to get rid of this error.                        #
+#                                                                            #
+#   INVALID RUN -- INVALID RUN -- INVALID RUN -- INVALID RUN -- INVALID RUN  #
+##############################################################################
+                           SPEC(R) CINT2006 Summary
+                                     S2500
+                           Tue Oct 22 14:40:00 2024
+
+CPU2006 License: 2656                                    Test date: Oct-2024
+Test sponsor:                                Hardware availability:         
+Tested by:                                   Software availability:         
+
+                                  Estimated                       Estimated
+                Base     Base       Base        Peak     Peak       Peak
+Benchmarks      Ref.   Run Time     Ratio       Ref.   Run Time     Ratio
+-------------- ------  ---------  ---------    ------  ---------  ---------
+400.perlbench    9770       1405       6.95 *                                  
+401.bzip2        9650       1842       5.24 *                                  
+403.gcc          8050       1338       6.02 *                                  
+429.mcf          9120       2425       3.76 *                                  
+445.gobmk       10490       1556       6.74 *                                  
+456.hmmer        9330        729      12.8  *                                  
+458.sjeng       12100       2004       6.04 *                                  
+462.libquantum  20720        812      25.5  *                                  
+464.h264ref     22130       2081      10.6  *                                  
+471.omnetpp      6250       1748       3.57 *                                  
+473.astar        7020       1629       4.31 *                                  
+483.xalancbmk    6900       1390       4.96 *                                  
+==============================================================================
+400.perlbench    9770       1405       6.95 *                                  
+401.bzip2        9650       1842       5.24 *                                  
+403.gcc          8050       1338       6.02 *                                  
+429.mcf          9120       2425       3.76 *                                  
+445.gobmk       10490       1556       6.74 *                                  
+456.hmmer        9330        729      12.8  *                                  
+458.sjeng       12100       2004       6.04 *                                  
+462.libquantum  20720        812      25.5  *                                  
+464.h264ref     22130       2081      10.6  *                                  
+471.omnetpp      6250       1748       3.57 *                                  
+473.astar        7020       1629       4.31 *                                  
+483.xalancbmk    6900       1390       4.96 *                                  
+ Est. SPECint(R)_base2006              6.75
+ Est. SPECint2006                                                   Not Run
+
+
+                                   HARDWARE
+                                   --------
+            CPU Name: could not determine
+ CPU Characteristics:  
+             CPU MHz: 2100
+                 FPU: --
+      CPU(s) enabled:  cores, could not determine chips,  cores/chip,  threads/core
+    CPU(s) orderable:  
+       Primary Cache: None
+     Secondary Cache: None
+            L3 Cache: None
+         Other Cache: None
+              Memory:  
+                      1.928 GB fixme: If using DDR3, format is:
+                      'N GB (M x N GB nRxn PCn-nnnnnR-n, ECC)'
+      Disk Subsystem: 19 GB  add more disk info here
+      Other Hardware: None
+
+
+                                   SOFTWARE
+                                   --------
+    Operating System:  
+                      Ubuntu 20.04.5 LTS
+                      5.4.0-182-generic
+            Compiler: GNU GCC 9.3.1
+       Auto Parallel: No
+         File System: ext4
+        System State: Run level N (add definition here)
+       Base Pointers: 64-bit
+       Peak Pointers: Not Applicable
+      Other Software: None
+
+
+                                Platform Notes
+                                --------------
+     Sysinfo program /cpu2006-1.2/Docs/sysinfo
+     $Rev: 6775 $ $Date:: 2011-08-16 #$ 8787f7622badcf24e01c368b1db4377c
+     running on vm8 Tue Oct 22 14:40:04 2024
+    
+     This section contains SUT (System Under Test) info as seen by
+     some common utilities.  To remove or add to this section, see:
+       http://www.spec.org/cpu2006/Docs/config.html#sysinfo
+    
+     From /proc/cpuinfo
+     *
+     * Did not identify cpu model.  If you would
+     * like to write your own sysinfo program, see
+     * www.spec.org/cpu2006/config.html#sysinfo
+     *
+     *
+     * 0 "physical id" tags found.  Perhaps this is an older system,
+     * or a virtualized system.  Not attempting to guess how to
+     * count chips/cores for this system.
+     *
+           2 "processors"
+        cores, siblings (Caution: counting these is hw and system dependent.  The
+        following excerpts from /proc/cpuinfo might not be reliable.  Use with
+        caution.)
+    
+     From /proc/meminfo
+        MemTotal:        2021340 kB
+        HugePages_Total:       0
+        Hugepagesize:       2048 kB
+    
+     /usr/bin/lsb_release -d
+        Ubuntu 20.04.5 LTS
+    
+     From /etc/*release* /etc/*version*
+        debian_version: bullseye/sid
+        os-release:
+           NAME="Ubuntu"
+           VERSION="20.04.5 LTS (Focal Fossa)"
+           ID=ubuntu
+           ID_LIKE=debian
+           PRETTY_NAME="Ubuntu 20.04.5 LTS"
+           VERSION_ID="20.04"
+           HOME_URL="https://www.ubuntu.com/"
+           SUPPORT_URL="https://help.ubuntu.com/"
+    
+     uname -a:
+        Linux vm8 5.4.0-182-generic #202-Ubuntu SMP Fri Apr 26 16:08:13 UTC 2024
+        aarch64 aarch64 aarch64 GNU/Linux
+    
+    
+     SPEC is set to: /cpu2006-1.2
+        Filesystem     Type  Size  Used Avail Use% Mounted on
+        /dev/vda2      ext4   19G   12G  5.9G  67% /
+    
+     (End of data from sysinfo program)
+
+                              Base Unknown Flags
+                              ------------------
+  400.perlbench: "gcc" (in CC) "gcc" (in LD) "-std=gnu89" (in CPORTABILITY)
+                 "-static -O3 -march=armv8-a+crc+fp+crypto -ffast-math -funroll-loops -fomit-frame-pointer -fprefetch-loop-arrays -finline-functions -ftree-vectorize -faggressive-loop-optimizations" (in OPTIMIZE)
+                 "-O3 -flto -fomit-frame-pointer -fwhole-program  -fipa-struct-reorg  -flto-partition=one" (in COPTIMIZE)
+                 "-fno-strict-aliasing" (in EXTRA_CFLAGS)
+
+      401.bzip2: "gcc" (in CC) "gcc" (in LD)
+                 "-static -O3 -march=armv8-a+crc+fp+crypto -ffast-math -funroll-loops -fomit-frame-pointer -fprefetch-loop-arrays -finline-functions -ftree-vectorize -faggressive-loop-optimizations" (in OPTIMIZE)
+                 "-O3 -flto -fomit-frame-pointer -fwhole-program  -fipa-struct-reorg  -flto-partition=one" (in COPTIMIZE)
+
+        403.gcc: "gcc" (in CC) "gcc" (in LD)
+                 "-static -O3 -march=armv8-a+crc+fp+crypto -ffast-math -funroll-loops -fomit-frame-pointer -fprefetch-loop-arrays -finline-functions -ftree-vectorize -faggressive-loop-optimizations" (in OPTIMIZE)
+                 "-O3 -flto -fomit-frame-pointer -fwhole-program  -fipa-struct-reorg  -flto-partition=one" (in COPTIMIZE)
+
+        429.mcf: "gcc" (in CC) "gcc" (in LD)
+                 "-static -O3 -march=armv8-a+crc+fp+crypto -ffast-math -funroll-loops -fomit-frame-pointer -fprefetch-loop-arrays -finline-functions -ftree-vectorize -faggressive-loop-optimizations" (in OPTIMIZE)
+                 "-O3 -flto -fomit-frame-pointer -fwhole-program  -fipa-struct-reorg  -flto-partition=one" (in COPTIMIZE)
+
+      445.gobmk: "gcc" (in CC) "gcc" (in LD)
+                 "-static -O3 -march=armv8-a+crc+fp+crypto -ffast-math -funroll-loops -fomit-frame-pointer -fprefetch-loop-arrays -finline-functions -ftree-vectorize -faggressive-loop-optimizations" (in OPTIMIZE)
+                 "-O3 -flto -fomit-frame-pointer -fwhole-program  -fipa-struct-reorg  -flto-partition=one" (in COPTIMIZE)
+
+      456.hmmer: "gcc" (in CC) "gcc" (in LD)
+                 "-static -O3 -march=armv8-a+crc+fp+crypto -ffast-math -funroll-loops -fomit-frame-pointer -fprefetch-loop-arrays -finline-functions -ftree-vectorize -faggressive-loop-optimizations" (in OPTIMIZE)
+                 "-O3 -flto -fomit-frame-pointer -fwhole-program  -fipa-struct-reorg  -flto-partition=one" (in COPTIMIZE)
+
+      458.sjeng: "gcc" (in CC) "gcc" (in LD)
+                 "-static -O3 -march=armv8-a+crc+fp+crypto -ffast-math -funroll-loops -fomit-frame-pointer -fprefetch-loop-arrays -finline-functions -ftree-vectorize -faggressive-loop-optimizations" (in OPTIMIZE)
+                 "-O3 -flto -fomit-frame-pointer -fwhole-program  -fipa-struct-reorg  -flto-partition=one" (in COPTIMIZE)
+
+ 462.libquantum: "gcc" (in CC) "gcc" (in LD)
+                 "-static -O3 -march=armv8-a+crc+fp+crypto -ffast-math -funroll-loops -fomit-frame-pointer -fprefetch-loop-arrays -finline-functions -ftree-vectorize -faggressive-loop-optimizations" (in OPTIMIZE)
+                 "-O3 -flto -fomit-frame-pointer -fwhole-program  -fipa-struct-reorg  -flto-partition=one" (in COPTIMIZE)
+
+    464.h264ref: "gcc" (in CC) "gcc" (in LD)
+                 "-fsigned-char" (in CPORTABILITY)
+                 "-static -O3 -march=armv8-a+crc+fp+crypto -ffast-math -funroll-loops -fomit-frame-pointer -fprefetch-loop-arrays -finline-functions -ftree-vectorize -faggressive-loop-optimizations" (in OPTIMIZE)
+                 "-O3 -flto -fomit-frame-pointer -fwhole-program  -fipa-struct-reorg  -flto-partition=one" (in COPTIMIZE)
+
+    471.omnetpp: "g++" (in CXX) "g++" (in LD)
+                 "-static -O3 -march=armv8-a+crc+fp+crypto -ffast-math -funroll-loops -fomit-frame-pointer -fprefetch-loop-arrays -finline-functions -ftree-vectorize -faggressive-loop-optimizations" (in OPTIMIZE)
+                 "-O3  -flto -fipa-pta -fno-cprop-registers -fno-delete-null-pointer-checks -fno-gcse -fno-ipa-sra  -fno-move-loop-invariants -ftracer -L%{gcc_dir}/lib64 -ljemalloc" (in CXXOPTIMIZE)
+
+      473.astar: "g++" (in CXX) "g++" (in LD)
+                 "-static -O3 -march=armv8-a+crc+fp+crypto -ffast-math -funroll-loops -fomit-frame-pointer -fprefetch-loop-arrays -finline-functions -ftree-vectorize -faggressive-loop-optimizations" (in OPTIMIZE)
+                 "-O3  -flto -fipa-pta -fno-cprop-registers -fno-delete-null-pointer-checks -fno-gcse -fno-ipa-sra  -fno-move-loop-invariants -ftracer -L%{gcc_dir}/lib64 -ljemalloc" (in CXXOPTIMIZE)
+
+  483.xalancbmk: "g++" (in CXX) "g++" (in LD)
+                 "-DXALAN_STRICT_ANSI_HEADERS -include cstdlib -include cstring -include ctime" (in CXXPORTABILITY)
+                 "-static -O3 -march=armv8-a+crc+fp+crypto -ffast-math -funroll-loops -fomit-frame-pointer -fprefetch-loop-arrays -finline-functions -ftree-vectorize -faggressive-loop-optimizations" (in OPTIMIZE)
+                 "-O3  -flto -fipa-pta -fno-cprop-registers -fno-delete-null-pointer-checks -fno-gcse -fno-ipa-sra  -fno-move-loop-invariants -ftracer -L%{gcc_dir}/lib64 -ljemalloc" (in CXXOPTIMIZE)
+
+
+                            Base Portability Flags
+                            ----------------------
+  400.perlbench: -DSPEC_CPU_LP64 -DSPEC_CPU_LINUX_X64
+      401.bzip2: -DSPEC_CPU_LP64
+        403.gcc: -DSPEC_CPU_LP64
+        429.mcf: -DSPEC_CPU_LP64
+      445.gobmk: -DSPEC_CPU_LP64
+      456.hmmer: -DSPEC_CPU_LP64
+      458.sjeng: -DSPEC_CPU_LP64
+ 462.libquantum: -DSPEC_CPU_LP64 -DSPEC_CPU_LINUX
+    464.h264ref: -DSPEC_CPU_LP64
+    471.omnetpp: -DSPEC_CPU_LP64
+      473.astar: -DSPEC_CPU_LP64
+  483.xalancbmk: -DSPEC_CPU_LP64 -DSPEC_CPU_LINUX
+
+
+    SPEC and SPECint are registered trademarks of the Standard Performance
+    Evaluation Corporation.  All other brand and product names appearing
+    in this result are trademarks or registered trademarks of their
+    respective holders.
+##############################################################################
+#   INVALID RUN -- INVALID RUN -- INVALID RUN -- INVALID RUN -- INVALID RUN  #
+#                                                                            #
+# 'reportable' flag not set during run                                       #
+# 471.omnetpp (base) did not have enough runs!                               #
+# 456.hmmer (base) did not have enough runs!                                 #
+# 445.gobmk (base) did not have enough runs!                                 #
+# 458.sjeng (base) did not have enough runs!                                 #
+# 429.mcf (base) did not have enough runs!                                   #
+# 473.astar (base) did not have enough runs!                                 #
+# 483.xalancbmk (base) did not have enough runs!                             #
+# 400.perlbench (base) did not have enough runs!                             #
+# 464.h264ref (base) did not have enough runs!                               #
+# 462.libquantum (base) did not have enough runs!                            #
+# 401.bzip2 (base) did not have enough runs!                                 #
+# 403.gcc (base) did not have enough runs!                                   #
+# Unknown flags were used! See                                               #
+#      http://www.spec.org/cpu2006/Docs/runspec.html#flagsurl                #
+# for information about how to get rid of this error.                        #
+#                                                                            #
+#   INVALID RUN -- INVALID RUN -- INVALID RUN -- INVALID RUN -- INVALID RUN  #
+##############################################################################
+-----------------------------------------------------------------------------
+For questions about this result, please contact the tester.
+For other inquiries, please contact webmaster@spec.org.
+Copyright 2006-2024 Standard Performance Evaluation Corporation
+Tested with SPEC CPU2006 v1.2.
+Report generated on Tue Oct 22 19:59:48 2024 by CPU2006 ASCII formatter v6400.

@@ -125,7 +125,8 @@ The dataset encompasses a diverse set of workloads designed to stress-test syste
 3. Kernel: Involves decompressing and building the Linux Kernel version 5.15.1 from a tarball.
 4. Jenkins: Replay the actual build history extracted from the Apache Software Foundation's Jenkins server (ci-builds.apache.org). The detailed events log is in the file `assets/apache.out.csv`.
 5. Synthetic: A random load, the events log is in the file `assets/event-gen.csv`.
-5. Idle: No critical tasks.
+6. SPECInt2006: Run the well-known benchmark SPEC 2006, the results and perf outputs is in directory `assets/spec`.
+7. Idle: No critical tasks.
 
 **TEAP**
 
@@ -224,7 +225,7 @@ For clarity, here's a synopsis of included datasets, detailing fan control strat
 | 202307301853.csv| PWM 30/255  | performance  | Stress 0-0-0～0-64-0 |
 | 202307302018.csv| PWM 30/255  | performance  | Stress 0-0-0～0-0-64～16-16-16~24-24-0 |
 | 202307302044.csv| PWM 30/255 | performance  | Stress 0-24-24～24-0-24 |
-| 202307311829.csv| PID 35 | performance  | Stress 0-0-0~64-0-0~16-16-16 |
+| 202307311829.csv| PID 35 | performance  | Stress 0-0-0～164-0-0～116-16-16 |
 | 202307311855.csv| PWM 30/255 | performance  | Stress 0-0-0～128-0-0 |
 | 202307311923.csv| PWM 30/255 | performance  | Stress 0-0-0～128-0-0 |
 | 202401042237.csv| PWM 30/255 | performance  | Stress 16-16-16 |
@@ -256,5 +257,13 @@ For clarity, here's a synopsis of included datasets, detailing fan control strat
 | 202405242207.csv| PWM 30/255| ondemand  | Jenkins & 16 VMs |
 | 202405242318.csv| PWM 30/255| TEAP  | Jenkins & 16 VMs |
 | 202406132127.csv| PID 35 | performance  | Jenkins & 16 VMs |
-
+| 202411022113.csv| PWM 30/255 | LADPM  | Jenkins & 16 VMs |
+| 202411022233.csv| PWM 30/255 | HFEE  | Jenkins & 16 VMs |
+| 202410222030.csv| PWM 30/255 | performance  | SPECInt2006 |
+| 202410230835.csv| PWM 30/255 | powersave  | SPECInt2006 |
+| 202410232015.csv| PWM 30/255 | ondemand  | SPECInt2006 |
+| 202410240010.csv| PID 35 | performance  | SPECInt2006 |
+| 202410241952.csv| PWM 30/255 | TEAP  | SPECInt2006 |
+| 202411010058.csv| PWM 30/255 | HFEE  | SPECInt2006 |
+| 202411012156.csv| PWM 30/255 | LADPM  | SPECInt2006 |
 

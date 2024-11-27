@@ -1,0 +1,16 @@
+# started on Thu Oct 24 08:03:09 2024
+
+
+ Performance counter stats for 'runspec --config=mytest.cfg --size=ref --action=run --tune=base --noreportable --iterations=1 -I int':
+
+    25705986245762      cycles                                                      
+    17073752919021      instructions              #    0.66  insn per cycle         
+      258747476480      cache-misses              #    3.731 % of all cache refs    
+     6934776892762      cache-references                                            
+
+   12513.094249635 seconds time elapsed
+
+   12338.787385000 seconds user
+      41.105128000 seconds sys
+
+
