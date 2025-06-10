@@ -11,6 +11,26 @@ Collected through both the server's Baseboard Management Controller (BMC) and a 
 
 Data was initially pulled by custom scripts and uploaded to InfluxDB for streamlined management. Exported data, now available in the `data` directory, awaits your analysis.
 
+bmcdata/
+├── assets/
+│   ├── spec/                   # SPEC 2006 Results
+│   ├── googlereplay           # scripts to process google cluster v1 data set
+│   ├── apache.out.csv           # Apache Jenkins Replay
+│   └── event-gen.csv          # Synthetic Workload
+├── script/
+│   ├── controller/        # Scripts run in the controller
+│   ├── executor/        # Scripts run in the executor
+│   ├── vm/        # Scripts are fetched by the VM's rc.local at initialization and automatically run the test script
+│   ├── split.py        # split the origin data
+│   ├── collapse.py            # aggregate the bmc and host data
+│   ├── scidata.py           # simple analysis
+|   ├── collapse.csv       # demo result for collapse.py
+├── data/
+│   ├── *.csv                  # Data traces exported from InfluxDB
+├── README.md
+└── LICENSE
+
+
 
 ### InfluxDB Export Methodology
 
@@ -126,12 +146,14 @@ The dataset encompasses a diverse set of workloads designed to stress-test syste
 4. Jenkins: Replay the actual build history extracted from the Apache Software Foundation's Jenkins server (ci-builds.apache.org). The detailed events log is in the file `assets/apache.out.csv`.
 5. Synthetic: A random load, the events log is in the file `assets/event-gen.csv`.
 6. SPECInt2006: Run the well-known benchmark SPEC 2006, the results and perf outputs is in directory `assets/spec`.
-7. Idle: No critical tasks.
+7. Google-v1: Google cluster replay (https://github.com/google/cluster-data), see `testgoogle.py` and `testscript.google.sh`.
+8. Idle: No critical tasks.
 
 **TEAP**
 
 Our ongoing research, not yet published, enables software-hardware collaborative resource provisioning.
-The genetic algorithm, along with a greedy algorithm for comparison, is located in `scripts/algorithms.py`.
+The genetic algorithm, along with a greedy algorithm for comparison, is located in `scripts/controller/algorithms.py`.
+The models implementation are in `scripts/controller/`.
 
 **FAN Mode**
 
@@ -146,6 +168,7 @@ Located in the `scripts` directory, these Python scripts facilitate preprocessin
 
 1. **split.py**: Divides the combined export into `bmc.csv` and `host.csv`. For further segmentation, customize the script or manually adjust.
 2. **collapse.py**: Integrates `bmc.csv` and `host.csv` based on `_time` into a unified dataset.
+3. **scidata.py**: Generates a simple figure of the `collapse.py`  outputs.
 
 ## Dataset Inventory
 
@@ -266,4 +289,10 @@ For clarity, here's a synopsis of included datasets, detailing fan control strat
 | 202410241952.csv| PWM 30/255 | TEAP  | SPECInt2006 |
 | 202411010058.csv| PWM 30/255 | HFEE  | SPECInt2006 |
 | 202411012156.csv| PWM 30/255 | LADPM  | SPECInt2006 |
+| 202506031650.csv| PWM 30/255 | TEAP(SVM+GA)  | Google-v1 |
+| 202506031715.csv| PWM 30/255 | TEAP(MLP+GA)  | Google-v1 |
+| 202506031736.csv| PWM 30/255 | TEAP(LSTM+GA)  | Google-v1 |
+| 202506041628.csv| PWM 30/255 | MultiThread-TEAP(SVM+GA)  | Google-v1 |
+| 202506050014.csv| PWM 30/255 | MultiThread-TEAP(SVM+Greedy)   | Google-v1 |
+
 
