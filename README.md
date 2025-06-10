@@ -11,6 +11,7 @@ Collected through both the server's Baseboard Management Controller (BMC) and a 
 
 Data was initially pulled by custom scripts and uploaded to InfluxDB for streamlined management. Exported data, now available in the `data` directory, awaits your analysis.
 
+```
 bmcdata/
 ├── assets/
 │   ├── spec/                   # SPEC 2006 Results
@@ -29,7 +30,7 @@ bmcdata/
 │   ├── *.csv                  # Data traces exported from InfluxDB
 ├── README.md
 └── LICENSE
-
+```
 
 
 ### InfluxDB Export Methodology
