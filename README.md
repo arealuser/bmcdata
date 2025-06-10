@@ -3,7 +3,7 @@ BMCDATA
 
 ## Overview
 
-This dataset stems from an Arm64 server featuring dual CPU sockets with 64 cores each, totaling 128 cores, backed by 128GB RAM and a 4TB HDD. 
+This dataset stems from an Dual-socket Phytium S2500 (Arm64, 8x16-core NUMA) server featuring dual CPU sockets with 64 cores each, totaling 128 cores, backed by 128GB RAM and a 4TB HDD. 
 Each NUMA node comprises 8 cores sharing an 8MB L3 cache, with clusters of 4 cores further benefiting from a shared 2MB L2 cache. 
 Each core has 32KB each of L1d and L1i cache. 
 The server utilizes DVFS with 16-core frenquency group for dynamic power and performance management.
