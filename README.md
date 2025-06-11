@@ -15,7 +15,8 @@ Data was initially pulled by custom scripts and uploaded to InfluxDB for streaml
 bmcdata/
 ├── assets/
 │   ├── spec/                   # SPEC 2006 Results
-│   ├── googlereplay           # scripts to process google cluster v1 data set
+│   ├── googlereplay/           # scripts to process google cluster v1 data set
+│   ├── baseline/                   # Implementations for HFEE and LADPM, and research records on characterization.
 │   ├── apache.out.csv           # Apache Jenkins Replay
 │   └── event-gen.csv          # Synthetic Workload
 ├── script/
