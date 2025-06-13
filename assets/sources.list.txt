@@ -1,0 +1,19 @@
+accumulo-main.tar: https://github.com/apache/accumulo/archive/370a7ded78379ad312e3dc486f671d0c053792d0.tar.gz
+activemq-main.tar: https://github.com/apache/activemq/archive/6084867b26619ab614bc117667a32649def5887a.tar.gz
+aries-trunk.tar: https://github.com/apache/aries/archive/e93c8014b2926d6732bf1ae53a2771f90477f514.tar.gz
+carbondata-master.tar: https://github.com/apache/carbondata/archive/71abab0f168f569674a9aa78e2ed2af35a2f5d18.tar.gz
+clerezza-master.tar: https://github.com/apache/clerezza/archive/a14071609b751843277e8d0dcc0fb52230a98712.tar.gz
+creadur-rat-master.tar: https://github.com/apache/creadur-rat/archive/aa2765dec5103b59708f3aaabd36142fe4e634ee.tar.gz
+dubbo-3.2.tar: https://github.com/apache/dubbo/archive/155c2f2c186cc797a2f31d9488e66cca07f892c4.tar.gz
+guacamole-client-main.tar: https://github.com/apache/guacamole-client/archive/462022e3f1b646666e8de1d821f2368ff95b5e20.tar.gz
+jackrabbit-oak-trunk.tar: https://github.com/apache/jackrabbit-oak/archive/8c02534da5c988f406008acacfe67c15a4467ad2.tar.gz
+kafka-trunk.tar: https://github.com/apache/kafka/archive/c034cf2953e691ce4ecd94bf00ac5810167354bc.tar.gz
+myfaces-tobago-main.tar: https://github.com/apache/myfaces-tobago/archive/91f7df2d8feae98a047afa1cf48d36b5865d45ba.tar.gz
+netbeans-nbpackage-master.tar: https://github.com/apache/netbeans-nbpackage/archive/9ef88f84b5078d3a66759ef09d18a8b0a7455dd1.tar.gz
+ranger-master.tar: https://github.com/apache/ranger/archive/f3637ac0bb35b213cfed11e5ffe14d93268bc4fa.tar.gz
+rocketmq-develop.tar: https://github.com/apache/rocketmq/archive/528ae847e28714e4fff250517354ba51d885e562.tar.gz
+royale-compiler-develop.tar: https://github.com/apache/royale-compiler/archive/fc03f3b4fa9bc93e2492dc3dc7db045656b8fa24.tar.gz
+solr-main.tar: https://github.com/apache/solr/archive/5856581b305601b882823d861d9ded7728251571.tar.gz
+tika-main.tar: https://github.com/apache/tika/archive/42c2089270b9641bfc0252bbba4e48a0c419d287.tar.gz
+tomee-main.tar: https://github.com/apache/tomee/archive/e378b0ffb680c169b769da8fa5b38dd6bac0351f.tar.gz
+

@@ -17,7 +17,9 @@ bmcdata/
 │   ├── spec/                   # SPEC 2006 Results
 │   ├── googlereplay/           # scripts to process google cluster v1 data set
 │   ├── baseline/                   # Implementations for HFEE and LADPM, and research records on characterization.
-│   ├── apache.out.csv           # Apache Jenkins Replay
+│   ├── apache.out.csv           # Apache Jenkins replay
+│   ├── sources.list.txt           # Apache Jenkins projects specifics
+│   ├── jenkinsjob.py           # Apache Jenkins replay trigger
 │   └── event-gen.csv          # Synthetic Workload
 ├── script/
 │   ├── controller/        # Scripts run in the controller
