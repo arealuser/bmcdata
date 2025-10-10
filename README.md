@@ -299,4 +299,23 @@ For clarity, here's a synopsis of included datasets, detailing fan control strat
 | 202506041628.csv| PWM 30/255 | MultiThread-TEAP(SVM+GA)  | Google-v1 |
 | 202506050014.csv| PWM 30/255 | MultiThread-TEAP(SVM+Greedy)   | Google-v1 |
 
+## Citation
+
+If you find this work useful, please cite our paper:
+
+```bibtex
+@article{zhang2025teap,
+  author    = {Zhang, Da and Xia, Haojun and Wang, Xiaotong and Feng, Yanchang and Liu, Haohao and Tu, Bibo},
+  title     = {Thermal Elasticity-Aware Host Resource Provision for Carbon Efficiency on Virtualized Servers},
+  journal   = {IEEE Transactions on Computers},
+  year={2025},
+  volume={74},
+  number={11},
+  pages={3682-3695},
+  doi={10.1109/TC.2025.3603698},
+  issn      = {1557-9956},
+  publisher = {IEEE Computer Society}
+}
+
+```
 
