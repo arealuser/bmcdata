@@ -3,13 +3,79 @@ BMCDATA
 
 ## Overview
 
-This dataset stems from an Dual-socket Phytium S2500 (Arm64, 8x16-core NUMA) server featuring dual CPU sockets with 64 cores each, totaling 128 cores, backed by 128GB RAM and a 4TB HDD. 
-Each NUMA node comprises 8 cores sharing an 8MB L3 cache, with clusters of 4 cores further benefiting from a shared 2MB L2 cache. 
-Each core has 32KB each of L1d and L1i cache. 
-The server utilizes DVFS with 16-core frenquency group for dynamic power and performance management.
-Collected through both the server's Baseboard Management Controller (BMC) and a user-level application, it encompasses a wealth of experimental data. Experiments include Fork-And-Join workloads, Linux kernel compilations, stress tests, and the replication of real Jenkins build histories. Offering insights into power management, fan control, system performance, and reliability.
+This dataset is collected from a **dual-socket Phytium S2500 (Arm64)** server platform,
+featuring **two CPU sockets with 64 cores each**, for a total of **128 cores**, backed by
+**128GB RAM** and a **4TB HDD**.
 
-Data was initially pulled by custom scripts and uploaded to InfluxDB for streamlined management. Exported data, now available in the `data` directory, awaits your analysis.
+The architecture consists of **8 NUMA nodes**, each containing **16 cores**.
+Within each NUMA node:
+- 8 cores share an **8MB L3 cache**
+- Sub-clusters of 4 cores share a **2MB L2 cache**
+- Each core is equipped with **32KB L1i and 32KB L1d cache**
+
+The server supports **DVFS with 16-core frequency groups**, enabling fine-grained
+power–performance management at the physical core level.
+For selected experiments involving GPU and LLM workloads, the system is extended with
+an **NVIDIA Tesla T4 GPU**.
+
+The dataset is collected through **both the Baseboard Management Controller (BMC)** and
+**user-level applications running on the host OS**, covering a wide range of
+**power, thermal, performance, and reliability metrics**.
+
+All data is initially gathered via custom scripts and stored in **InfluxDB** for
+time-series management. The exported dataset is available in the `data/` directory
+for further analysis and reproduction.
+
+### TEAP (Thermal Elasticity-Aware Host Resource Provision)
+
+[**TEAP**](https://doi.org/10.1109/TC.2025.3603698) is our foundational research on **thermal elasticity-aware resource provisioning**,
+which enables *software–hardware collaborative control* for energy-efficient and stable
+server operation.
+
+TEAP introduces the concept of **thermal elasticity** to characterize the balance between
+computational capacity and cooling capability. When this balance is violated, TEAP dynamically
+adjusts host resource provisioning to restore system stability.
+
+In the TEAP implementation:
+- The **decision logic** runs on a *remote controller*
+- A **genetic algorithm**, with a greedy algorithm as a baseline, is used to search for
+  resource provisioning strategies
+- Algorithm implementations are located in `scripts/controller/algorithms.py`
+- Model implementations are provided in `scripts/controller/`
+
+### HyperFan: Edge-Side Evolution of TEAP
+
+**HyperFan** is an edge-oriented evolution of TEAP that **moves the decision maker from
+a remote controller to the BMC firmware**, transforming the BMC into a
+**server-level edge computing node**.
+
+Key innovations introduced by HyperFan include:
+
+- **Edge-side decision making**  
+  Control logic is executed directly on the BMC, close to physical sensors,
+  reducing control latency and removing reliance on centralized controllers.
+
+- **Autonomous edge intelligence on the BMC**  
+  The BMC operates as an **autonomous control system**, performing sensing,
+  inference, decision-making, and actuation locally without relying on
+  external controllers.
+
+- **Deep learning–capable edge inference**  
+  An **MLP model implemented with TinyDNN** runs directly on the BMC firmware.
+  This design choice is **not merely for lightweight execution**, but to
+  demonstrate that **deep learning models can be practically deployed and
+  executed on resource-constrained BMC platforms**.
+
+- **Self-contained closed-loop control**  
+The BMC directly generates and enforces:
+- Fan control decisions
+- CPU frequency adjustment strategies
+- Thread consolidation plans using greedy algorithms
+
+Through HyperFan, TEAP evolves from a **controller-centric optimization framework**
+into a **firmware-level, edge-resident intelligent control system**, suitable for
+continuous deployment in production servers.
+
 
 ```
 bmcdata/
@@ -138,6 +204,13 @@ Utilizing software such as Microsoft Excel or Google Sheets to view these files 
 | `temp9` | Temperature of the host's sensors command output |
 | `total_vcpu` | Total vCPUs |
 | `total_vm` | Total VMs |
+| `mem_total_gpu0` | Total Memory Usage of GPU0 |
+| `mem_used_gpu0` | Used Memory Usage of GPU0 |
+| `name_gpu0` | GPU0 Name |
+| `power_gpu0` | Power Usage of GPU0 |
+| `temp_gpu0` | Temperature of GPU0 |
+| `util_gpu0` | Utilization of GPU0 |
+
 
 
 **Workload**
@@ -151,13 +224,8 @@ The dataset encompasses a diverse set of workloads designed to stress-test syste
 5. Synthetic: A random load, the events log is in the file `assets/event-gen.csv`.
 6. SPECInt2006: Run the well-known benchmark SPEC 2006, the results and perf outputs is in directory `assets/spec`.
 7. Google-v1: Google cluster replay (https://github.com/google/cluster-data), see `testgoogle.py` and `testscript.google.sh`.
-8. Idle: No critical tasks.
-
-**TEAP**
-
-Our ongoing research, not yet published, enables software-hardware collaborative resource provisioning.
-The genetic algorithm, along with a greedy algorithm for comparison, is located in `scripts/controller/algorithms.py`.
-The models implementation are in `scripts/controller/`.
+8. llamabench: A benchmark for evaluating the inference performance of LLM models, compiled from llama.cpp source code.
+9. Idle: No critical tasks.
 
 **FAN Mode**
 
@@ -298,6 +366,12 @@ For clarity, here's a synopsis of included datasets, detailing fan control strat
 | 202506031736.csv| PWM 30/255 | TEAP(LSTM+GA)  | Google-v1 |
 | 202506041628.csv| PWM 30/255 | MultiThread-TEAP(SVM+GA)  | Google-v1 |
 | 202506050014.csv| PWM 30/255 | MultiThread-TEAP(SVM+Greedy)   | Google-v1 |
+| 202512112333.csv| PWM 30/255 ~ PWM 255/255 | performance  | llamabench Qwen3-8B r=50 |
+| 202512120002.csv| PWM 30/255 ~ PWM 120/255| performance  | llamabench Qwen3-8B r=3|
+| 202512120114.csv| PWM 30/255 ~ PWM 160/255 | performance  | llamabench Qwen3-8B ngl=10~36 |
+| 202512132208.csv| PID 35 | performance  | llama-bench Qwen3-8B r=20 ngl=30 |
+| 202512132226.csv| PWM 255/255 | performance  | llama-bench Qwen3-8B r=20 ngl=30 |
+| 202512132302.csv| HyperFan | performance  | llama-bench Qwen3-8B r=20 ngl=30 |
 
 ## Citation
 
